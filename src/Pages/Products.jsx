@@ -21,7 +21,7 @@ const Product = () => {
   }, []);
 
   return (
-    <Box className="min-vh-100 py-5 d-flex justify-content-center flex-wrap gap-5">
+    <Box className="bg-light bg-gradient min-vh-100 py-5 d-flex justify-content-center flex-wrap gap-5">
       <Container maxWidth="lg" className="mt-5">
         <Grid container spacing={4} justifyContent="center">
           {Data ? (
