@@ -8,6 +8,8 @@ const SingleProduct = () => {
   const [product, setProduct] = useState(null);
   const { id } = useParams();
   
+
+  
   useEffect(() => {
     axios(`https://fakestoreapi.com/products`)
       .then((res) => {
