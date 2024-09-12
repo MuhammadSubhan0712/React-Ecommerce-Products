@@ -10,20 +10,22 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
-import axios from 'axios';
+import axios from "axios";
 
 function HomePage() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios('https://fakestoreapi.com/products?limit=6')
-      .then(response => setProducts(response.data))
-      .catch(error => console.error('Error fetching products:', error));
+    axios("https://fakestoreapi.com/products?limit=6")
+      .then((response) => setProducts(response.data))
+      .catch((error) => console.error("Error fetching products:", error));
   }, []);
 
   return (
     <>
-      <Container fluid className="bg-secondary bg-gradient text-white text-center py-5">
+      <Container
+        fluid
+        className="bg-light bg-gradient text-secondary text-center py-5">
         <Typography variant="h4" className="mt-5 mb-4">
           Welcome to Our Store!
         </Typography>
