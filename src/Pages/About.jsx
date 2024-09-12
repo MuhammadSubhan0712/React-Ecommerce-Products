@@ -2,6 +2,7 @@
 import { Container, Typography, Box } from "@mui/material";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
 const About = () => {
   return (
     <Container maxWidth="md" className="mt-5">
