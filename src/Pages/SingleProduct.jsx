@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Container , Grid , Typography, Button, Box } from "@mui/material";
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const SingleProduct = () => {
