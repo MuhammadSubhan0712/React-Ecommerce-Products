@@ -9,7 +9,7 @@ const SingleProduct = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    axios(`https://fakestoreapi.com/products`)
+    axios(`https://fakestoreapi.com/products/${id}`)
       .then((res) => {
         setProduct(res.data);
         console.log(res.data);
