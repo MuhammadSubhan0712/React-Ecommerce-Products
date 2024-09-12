@@ -31,10 +31,6 @@ const SingleProduct = () => {
 
   return (
     <Container maxWidth="lg" className="py-4">
-      <Typography>Single Product {id}</Typography>
-      <Typography variant="h4" align="center" gutterBottom>
-        Product: {product.title}
-      </Typography>
       <Grid container spacing={4} justifyContent="center">
         <Grid item xs={12} md={6}>
           <img
