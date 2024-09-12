@@ -1,15 +1,15 @@
 // import React from "react"
 import { Outlet } from "react-router-dom"
-import Navbar from "./Components/Navbar"
+import ResponsiveAppBar from "./Components/Navbar"
 
 
 const Layout = () => {
 
     return(
         <>
-        <Navbar/>
+        <ResponsiveAppBar/>
         <Outlet/>
-        </>
+       </>
     )
 }
 
