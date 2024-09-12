@@ -13,14 +13,13 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const pages = [
   { name: "Home", path: "/" },
   { name: "About", path: "about" },
   { name: "Contact", path: "contact" },
-  { name: "Products", path: "products" }
+  { name: "Products", path: "products" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -61,9 +60,8 @@ function ResponsiveAppBar() {
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
-            }}
-          >
-           LElOO
+            }}>
+            LElOo0
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -73,8 +71,7 @@ function ResponsiveAppBar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
-            >
+              color="inherit">
               <MenuIcon />
             </IconButton>
             <Menu
@@ -91,15 +88,13 @@ function ResponsiveAppBar() {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{ display: { xs: "block", md: "none" } }}
-            >
+              sx={{ display: { xs: "block", md: "none" } }}>
               {pages.map((page) => (
                 <MenuItem key={page.name} onClick={handleCloseNavMenu}>
                   <Typography
                     textAlign="center"
                     component={Link}
-                    to={page.path}
-                  >
+                    to={page.path}>
                     {page.name}
                   </Typography>
                 </MenuItem>
@@ -121,8 +116,7 @@ function ResponsiveAppBar() {
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
-            }}
-          >
+            }}>
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
@@ -132,8 +126,7 @@ function ResponsiveAppBar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
                 component={Link}
-                to={page.path}
-              >
+                to={page.path}>
                 {page.name}
               </Button>
             ))}
@@ -158,8 +151,7 @@ function ResponsiveAppBar() {
                 horizontal: "right",
               }}
               open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
+              onClose={handleCloseUserMenu}>
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">{setting}</Typography>
