@@ -82,7 +82,7 @@ const Cards = ({image, title, price, items}) => {
           <Button
             variant="contained"
             color="primary"
-            onClick={() => singleUser}
+            onClick={() => singleUser(items)}
             sx={{
               background: 'linear-gradient(to right, #4caf50, #2196f3)', // Gradient button
               '&:hover': {

@@ -10,13 +10,13 @@ const SingleProduct = () => {
   
 
   useEffect(() => {
-    axios(`https://fakestoreapi.com/products/${id}`)
+    axios(`https://fakestoreapi.com/products`)
       .then((res) => {
         setProduct(res.data);
         console.log(res.data);
       })
       .catch((err) => console.log("Error ==>", err));
-  }, [id]);
+  }, []);
 
 
   if (!product) {
@@ -34,6 +34,9 @@ const SingleProduct = () => {
 
   return (
     <Container maxWidth="lg" className="py-4">
+        <Typography>
+            Single Product {id}
+        </Typography>
       <Typography variant="h4" align="center" gutterBottom>
         Product: {product.title}
       </Typography>
