@@ -1,19 +1,3 @@
-// // import React from "react"
-// import { Typography } from "@mui/material"
-// const Home = () => {
-
-
-//     return(
-//         <>
-//         <Typography variant="h1">
-// Home
-//         </Typography>
-        
-//         </>
-//     )
-// }
-
-// export default Home
 
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -105,12 +89,7 @@ function HomePage() {
         </Grid>
       </Container>
 
-      {/* Footer */}
-      <footer className="bg-dark text-white text-center py-3">
-        <Typography variant="body1">
-          &copy; 2024 E-Commerce. All rights reserved.
-        </Typography>
-      </footer>
+   
     </>
   );
 }

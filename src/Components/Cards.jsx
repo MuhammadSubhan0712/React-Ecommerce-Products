@@ -1,61 +1,100 @@
-// import React from "react";
-import { useNavigate } from "react-router-dom";
-import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
-import CardActions from "@mui/material/CardActions";
-import Button from "@mui/material/Button";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import CardActions from '@mui/material/CardActions';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// import Box from "@mui/material/Box";
-
-
-const Cards = ({ image, title , price , items }) => {
+const Cards = ({image, title, price, items}) => {
   const navigate = useNavigate();
-
 
   const singleUser = (items) => {
     if (items && items.id) {
-      navigate(`/SingleProduct/${items.id}`);
+      navigate(`/singleproduct`);
     } else {
-      console.error("Items is undefined or missing an id:", items);
+      console.error('Items is undefined or missing an id:', items);
     }
   };
 
   return (
-    <Card 
-      className="shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-      sx={{ width: 300, borderRadius: '10px' }}
+    <Box
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      p={2}
     >
-      <CardMedia
-        component="img"
-        height="200"
-        image={image}
-        alt="Product"
-        className="rounded-top"
-      />
-
-      <CardContent className="bg-dark text-white">
-        <Typography gutterBottom variant="h5" component="div">
-          {title}
-        </Typography>
-        <Typography variant="h6" color="white" className="mt-2">
-          Price: ${price}
-        </Typography>
-      </CardContent>
-
-      <CardActions className="d-flex justify-content-end">
-        <Button 
-          variant="contained"
-          color="primary"
-          onClick={() => singleUser(items)}
-          className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-blue-500 hover:to-green-400 text-white"
+      <Card
+        sx={{
+          maxWidth: 345,
+          borderRadius: '10px',
+          boxShadow: 3,
+          transition: 'all 0.3s ease-in-out',
+          '&:hover': {
+            boxShadow: 6,
+            transform: 'scale(1.05)',
+          },
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
+        <CardMedia
+          component="img"
+          height="140" // Reduced height for a smaller image
+          image={image}
+          alt="Product"
+          sx={{
+            objectFit: 'contain', // Adjusts the image to fit inside without cropping
+            borderTopLeftRadius: '10px',
+            borderTopRightRadius: '10px',
+          }}
+        />
+        <CardContent
+          sx={{
+            backgroundColor: '#333',
+            color: '#fff',
+            display: 'flex',
+            flexDirection: 'column',
+            flexGrow: 1, // Makes sure the content fills the remaining space
+            justifyContent: 'space-between', // Ensures proper spacing
+          }}
         >
-          See Details
-        </Button>
-      </CardActions>
-    </Card>
+          <Typography gutterBottom variant="h6" component="div">
+            {title}
+          </Typography>
+          <Typography variant="h6" component="div" sx={{ mt: 1 }}>
+            Price: ${price}
+          </Typography>
+        </CardContent>
+        <CardActions
+          sx={{
+            backgroundColor: '#444',
+            borderBottomLeftRadius: '10px',
+            borderBottomRightRadius: '10px',
+            display: 'flex',
+            justifyContent: 'center', // Centers the button
+            padding: 1, // Adds padding around the button
+          }}
+        >
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => singleUser}
+            sx={{
+              background: 'linear-gradient(to right, #4caf50, #2196f3)', // Gradient button
+              '&:hover': {
+                background: 'linear-gradient(to right, #2196f3, #4caf50)',
+              },
+            }}
+          >
+            See Details
+          </Button>
+        </CardActions>
+      </Card>
+    </Box>
   );
 };
 

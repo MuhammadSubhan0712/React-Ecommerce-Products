@@ -21,8 +21,8 @@ const Product = () => {
   }, []);
 
   return (
-    <div className="min-vh-100 bg-gradient-to-r from-blue-900 via-black to-purple-900 py-8">
-      <Container maxWidth="lg" className="mt-8">
+    <Box className="min-vh-100 py-5 d-flex justify-content-center flex-wrap gap-5">
+      <Container maxWidth="lg" className="mt-5">
         <Grid container spacing={4} justifyContent="center">
           {Data ? (
             Data.map((item) => (
@@ -47,7 +47,7 @@ const Product = () => {
           )}
         </Grid>
       </Container>
-    </div>
+    </Box>
   );
 };
 
