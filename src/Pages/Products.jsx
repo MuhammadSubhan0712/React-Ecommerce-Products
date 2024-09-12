@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Cards from "../components/Cards";
+import Cards from "../Components/Cards";
+import Box from '@mui/material/Box'; 
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import CircularProgress from "@mui/material/CircularProgress";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Product = () => {
   const [Data, setData] = useState(null);

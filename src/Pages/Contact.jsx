@@ -1,5 +1,6 @@
 // import React from "react";
 import { Container, Typography, TextField, Button, Box } from "@mui/material";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Contact = () => {
   return (

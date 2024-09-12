@@ -15,19 +15,8 @@
 
 // export default Home
 
-// import React from 'react';import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Button from '@mui/material/Button';
-import { Navbar, Nav } from 'react-bootstrap';
-
-fimport React from 'react';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -66,22 +55,9 @@ function HomePage() {
 
   return (
     <>
-      {/* Navbar */}
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" component="div" className="me-auto">
-            E-Commerce
-          </Typography>
-          <Button color="inherit" href="#home">Home</Button>
-          <Button color="inherit" href="#about">About</Button>
-          <Button color="inherit" href="#contact">Contact</Button>
-          <Button color="inherit" href="#products">Products</Button>
-        </Toolbar>
-      </AppBar>
-
       {/* Hero Section */}
       <Container fluid className="bg-primary text-white text-center py-5">
-        <Typography variant="h3" className="mb-4">
+        <Typography variant="h4" className="mb-4">
           Welcome to Our Store!
         </Typography>
         <Button variant="contained" color="secondary" href="#products">

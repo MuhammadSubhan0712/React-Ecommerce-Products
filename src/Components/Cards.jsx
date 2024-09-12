@@ -6,7 +6,9 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import CardActions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+// import Box from "@mui/material/Box";
 
 
 const Cards = ({ image, title , price , items }) => {
@@ -33,7 +35,7 @@ const Cards = ({ image, title , price , items }) => {
         alt="Product"
         className="rounded-top"
       />
-      
+
       <CardContent className="bg-dark text-white">
         <Typography gutterBottom variant="h5" component="div">
           {title}
