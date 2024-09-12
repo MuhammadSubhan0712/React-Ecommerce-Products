@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -10,37 +10,21 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
+import axios from 'axios';
 
 function HomePage() {
-  const products = [
-    {
-      id: 1,
-      name: "Product 1",
-      description: "This is a short description of product 1.",
-      price: "$29.99",
-      image: "https://via.placeholder.com/300",
-    },
-    {
-      id: 2,
-      name: "Product 2",
-      description: "This is a short description of product 2.",
-      price: "$39.99",
-      image: "https://via.placeholder.com/300",
-    },
-    {
-      id: 3,
-      name: "Product 3",
-      description: "This is a short description of product 3.",
-      price: "$49.99",
-      image: "https://via.placeholder.com/300",
-    },
-  ];
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    axios('https://fakestoreapi.com/products?limit=6')
+      .then(response => setProducts(response.data))
+      .catch(error => console.error('Error fetching products:', error));
+  }, []);
 
   return (
     <>
-      {/* Hero Section */}
-      <Container fluid className="bg-primary text-white text-center py-5">
-        <Typography variant="h4" className="mb-4">
+      <Container fluid className="bg-secondary bg-gradient text-white text-center py-5">
+        <Typography variant="h4" className="mt-5 mb-4">
           Welcome to Our Store!
         </Typography>
         <Button variant="contained" color="secondary" href="#products">
@@ -61,20 +45,21 @@ function HomePage() {
                   component="img"
                   height="200"
                   image={product.image}
-                  alt={product.name}
+                  alt={product.title}
+                  sx={{ objectFit: "contain" }}
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
-                    {product.name}
+                    {product.title}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    {product.description}
+                    {product.description.substring(0, 100)}...
                   </Typography>
                   <Typography
                     variant="h6"
                     color="text.primary"
                     className="mt-3">
-                    {product.price}
+                    ${product.price}
                   </Typography>
                 </CardContent>
                 <CardActions className="d-flex justify-content-between">

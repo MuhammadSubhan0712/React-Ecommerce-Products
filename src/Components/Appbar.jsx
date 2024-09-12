@@ -17,9 +17,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const pages = [
   { name: "Home", path: "/" },
-  { name: "About", path: "about" },
-  { name: "Contact", path: "contact" },
-  { name: "Products", path: "products" },
+  { name: "About Us", path: "about" },
+  { name: "Contact Us", path: "contact" },
+  { name: "Our Products", path: "products" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
