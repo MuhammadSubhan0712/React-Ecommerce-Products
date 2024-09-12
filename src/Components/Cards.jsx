@@ -76,9 +76,9 @@ const Cards = ({ image, title, price, items }) => {
             color="primary"
             onClick={() => singleUser(items)}
             sx={{
-              background: "linear-gradient(to right, #4caf50, #2196f3)", // Gradient button
+              background: "linear-gradient(to right, black, blue)", // Gradient button
               "&:hover": {
-                background: "linear-gradient(to right, #2196f3, #4caf50)",
+                background: "linear-gradient(to right, blue, black)",
               },
             }}>
             See Details
