@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { Container , Grid , Typography, Button, Box } from "@mui/material";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Grid, Typography, Button, Box } from "@mui/material";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const SingleProduct = () => {
   const [product, setProduct] = useState(null);
   const { id } = useParams();
-  
 
-  
   useEffect(() => {
     axios(`https://fakestoreapi.com/products`)
       .then((res) => {
@@ -19,15 +17,13 @@ const SingleProduct = () => {
       .catch((err) => console.log("Error ==>", err));
   }, []);
 
-
   if (!product) {
     return (
       <Box
         display="flex"
         justifyContent="center"
         alignItems="center"
-        minHeight="100vh"
-      >
+        minHeight="100vh">
         <Typography variant="h6">Loading...</Typography>
       </Box>
     );
@@ -35,9 +31,7 @@ const SingleProduct = () => {
 
   return (
     <Container maxWidth="lg" className="py-4">
-        <Typography>
-            Single Product {id}
-        </Typography>
+      <Typography>Single Product {id}</Typography>
       <Typography variant="h4" align="center" gutterBottom>
         Product: {product.title}
       </Typography>
