@@ -1,39 +1,38 @@
-
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Button from '@mui/material/Button';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Card from "@mui/material/Card";
+import CardMedia from "@mui/material/CardMedia";
+import CardContent from "@mui/material/CardContent";
+import CardActions from "@mui/material/CardActions";
+import Button from "@mui/material/Button";
 
 function HomePage() {
   const products = [
     {
       id: 1,
-      name: 'Product 1',
-      description: 'This is a short description of product 1.',
-      price: '$29.99',
-      image: 'https://via.placeholder.com/300',
+      name: "Product 1",
+      description: "This is a short description of product 1.",
+      price: "$29.99",
+      image: "https://via.placeholder.com/300",
     },
     {
       id: 2,
-      name: 'Product 2',
-      description: 'This is a short description of product 2.',
-      price: '$39.99',
-      image: 'https://via.placeholder.com/300',
+      name: "Product 2",
+      description: "This is a short description of product 2.",
+      price: "$39.99",
+      image: "https://via.placeholder.com/300",
     },
     {
       id: 3,
-      name: 'Product 3',
-      description: 'This is a short description of product 3.',
-      price: '$49.99',
-      image: 'https://via.placeholder.com/300',
+      name: "Product 3",
+      description: "This is a short description of product 3.",
+      price: "$49.99",
+      image: "https://via.placeholder.com/300",
     },
   ];
 
@@ -71,7 +70,10 @@ function HomePage() {
                   <Typography variant="body2" color="text.secondary">
                     {product.description}
                   </Typography>
-                  <Typography variant="h6" color="text.primary" className="mt-3">
+                  <Typography
+                    variant="h6"
+                    color="text.primary"
+                    className="mt-3">
                     {product.price}
                   </Typography>
                 </CardContent>
@@ -88,8 +90,6 @@ function HomePage() {
           ))}
         </Grid>
       </Container>
-
-   
     </>
   );
 }
