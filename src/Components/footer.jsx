@@ -108,7 +108,7 @@ const Footer = () => {
             alignItems: "center",
           }}>
           <Typography variant="body2">
-            &copy; 2025 LELO. All rights reserved.
+            &copy; 2025 LELO. <abbr title="Muhammad Subhan Khan">MSK</abbr> All rights reserved.
           </Typography>
           <Box sx={{ mt: { xs: 2, sm: 0 } }}>
             <Link href="#" color="inherit" sx={{ mx: 1 }}>
