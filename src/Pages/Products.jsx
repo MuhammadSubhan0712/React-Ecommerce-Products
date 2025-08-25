@@ -12,7 +12,6 @@ import {
   Pagination,
   alpha,
 } from "@mui/material";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 const Product = () => {
   const [data, setData] = useState(null);

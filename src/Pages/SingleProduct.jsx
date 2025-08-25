@@ -13,7 +13,7 @@ import {
   Divider,
   alpha,
 } from "@mui/material";
-import "bootstrap/dist/css/bootstrap.min.css";
+
 
 const SingleProduct = () => {
   const [product, setProduct] = useState(null);

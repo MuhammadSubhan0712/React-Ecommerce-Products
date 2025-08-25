@@ -10,7 +10,6 @@ import {
   Alert,
   alpha,
 } from "@mui/material";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -55,8 +54,8 @@ const Contact = () => {
             Contact Us
           </Typography>
           <Typography variant="h6" sx={{ maxWidth: "700px", mx: "auto" }}>
-            Have questions? We'd love to hear from you. Send us a message and
-            we'll respond as soon as possible.
+            Have questions? We&#8217;d love to hear from you. Send us a message and
+            we&#8217;ll respond as soon as possible.
           </Typography>
         </Container>
       </Box>
@@ -73,7 +72,7 @@ const Contact = () => {
               Get in Touch
             </Typography>
             <Typography variant="body1" paragraph>
-              Our team is here to answer any questions you might have. We're
+              Our team is here to answer any questions you might have. We&#8217;re
               looking forward to hearing from you.
             </Typography>
 
@@ -109,7 +108,7 @@ const Contact = () => {
 
               {submitted && (
                 <Alert severity="success" sx={{ mb: 3 }}>
-                  Thank you for your message! We'll get back to you soon.
+                  Thank you for your message! We&#8217;ll get back to you soon.
                 </Alert>
               )}
 

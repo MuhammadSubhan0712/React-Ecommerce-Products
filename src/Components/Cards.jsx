@@ -12,7 +12,7 @@ import {
   IconButton,
 } from "@mui/material";
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
-import "bootstrap/dist/css/bootstrap.min.css";
+
 
 const Cards = ({ image, title, price, items, rating }) => {
   const navigate = useNavigate();
