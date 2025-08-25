@@ -10,7 +10,7 @@ import {
   TextField,
   MenuItem,
   Pagination,
-  alpha
+  alpha,
 } from "@mui/material";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -34,12 +34,12 @@ const Product = () => {
   useEffect(() => {
     if (data) {
       let result = [...data];
-      
+
       // Filter by category
       if (category !== "all") {
-        result = result.filter(item => item.category === category);
+        result = result.filter((item) => item.category === category);
       }
-      
+
       // Sort products
       if (sort === "price-low") {
         result.sort((a, b) => a.price - b.price);
@@ -48,17 +48,16 @@ const Product = () => {
       } else if (sort === "rating") {
         result.sort((a, b) => b.rating?.rate - a.rating?.rate);
       }
-      
+
       setFilteredData(result);
       setPage(1); // Reset to first page when filters change
     }
   }, [data, category, sort]);
 
   // Get current items for pagination
-  const currentItems = filteredData ? filteredData.slice(
-    (page - 1) * itemsPerPage,
-    page * itemsPerPage
-  ) : [];
+  const currentItems = filteredData
+    ? filteredData.slice((page - 1) * itemsPerPage, page * itemsPerPage)
+    : [];
 
   const handlePageChange = (event, value) => {
     setPage(value);
@@ -85,17 +84,23 @@ const Product = () => {
       {/* Hero Section */}
       <Box
         sx={{
-          background: `linear-gradient(135deg, ${alpha('#3f51b5', 0.9)} 0%, ${alpha('#f50057', 0.9)} 100%)`,
-          color: 'white',
-          textAlign: 'center',
+          background: `linear-gradient(135deg, ${alpha(
+            "#3f51b5",
+            0.9
+          )} 0%, ${alpha("#f50057", 0.9)} 100%)`,
+          color: "white",
+          textAlign: "center",
           py: { xs: 8, md: 12 },
-        }}
-      >
+        }}>
         <Container>
-          <Typography variant="h2" component="h1" fontWeight="bold" gutterBottom>
+          <Typography
+            variant="h2"
+            component="h1"
+            fontWeight="bold"
+            gutterBottom>
             Our Products
           </Typography>
-          <Typography variant="h6" sx={{ maxWidth: '700px', mx: 'auto' }}>
+          <Typography variant="h6" sx={{ maxWidth: "700px", mx: "auto" }}>
             Discover our curated collection of high-quality products
           </Typography>
         </Container>
@@ -103,14 +108,20 @@ const Product = () => {
 
       <Container maxWidth="lg" sx={{ py: 8 }}>
         {/* Filters */}
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mb: 6, justifyContent: 'center' }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 2,
+            mb: 6,
+            justifyContent: "center",
+          }}>
           <TextField
             select
             label="Category"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            sx={{ minWidth: 200 }}
-          >
+            sx={{ minWidth: 200 }}>
             {categories.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.label}
@@ -122,8 +133,7 @@ const Product = () => {
             label="Sort By"
             value={sort}
             onChange={(e) => setSort(e.target.value)}
-            sx={{ minWidth: 200 }}
-          >
+            sx={{ minWidth: 200 }}>
             {sortOptions.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.label}
@@ -150,7 +160,7 @@ const Product = () => {
 
             {/* Pagination */}
             {filteredData.length > itemsPerPage && (
-              <Box sx={{ display: 'flex', justifyContent: 'center', mt: 6 }}>
+              <Box sx={{ display: "flex", justifyContent: "center", mt: 6 }}>
                 <Pagination
                   count={Math.ceil(filteredData.length / itemsPerPage)}
                   page={page}
@@ -166,7 +176,11 @@ const Product = () => {
             No products found in this category.
           </Typography>
         ) : (
-          <Box display="flex" justifyContent="center" alignItems="center" minHeight="300px">
+          <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            minHeight="300px">
             <Box textAlign="center">
               <CircularProgress size={60} thickness={4} />
               <Typography variant="h6" sx={{ mt: 2 }}>
