@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import ResponsiveAppBar from "./Components/Appbar";
-import Footer from "./Components/Footer";
+import Footer from "./Components/footer";
 import HomePage from "./Pages/Home";
 import AboutUs from "./Pages/About";
 import Contact from "./Pages/Contact";

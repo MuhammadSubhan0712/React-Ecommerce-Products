@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { Facebook, Twitter, Instagram, LinkedIn } from "@mui/icons-material";
 
-const Footer = () => {
+const footer = () => {
 
   return (
     <Box
@@ -136,4 +136,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default footer;
