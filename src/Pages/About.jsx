@@ -1,84 +1,124 @@
 import React from "react";
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
+import {
+  Container,
+  Typography,
+  Box,
+  Grid,
+  CardMedia,
+  Button,
+  Paper,
+  alpha
+} from "@mui/material";
 
 function AboutUs() {
   return (
-    <Container maxWidth="lg" sx={{ my: 5 }}>
-      <Grid container spacing={4} alignItems="center">
-        {/* Image Section */}
-        <Grid item xs={12} md={6}>
-          <CardMedia
-            component="img"
-            alt="Clothing Store"
-            height="400"
-            image="https://media.istockphoto.com/id/864505242/photo/mens-clothing-and-personal-accessories.jpg?s=612x612&w=0&k=20&c=TaJuW3UY9IZMijRrj1IdJRwd6iWzXBlrZyQd1uyBzEY="
-            title="About Us"
-            sx={{ borderRadius: 2 }}
-          />
+    <Box>
+      {/* Hero Section */}
+      <Box
+        sx={{
+          background: `linear-gradient(135deg, ${alpha('#3f51b5', 0.9)} 0%, ${alpha('#f50057', 0.9)} 100%)`,
+          color: 'white',
+          textAlign: 'center',
+          py: { xs: 8, md: 12 },
+        }}
+      >
+        <Container>
+          <Typography variant="h2" component="h1" fontWeight="bold" gutterBottom>
+            About Lelo
+          </Typography>
+          <Typography variant="h6" sx={{ maxWidth: '700px', mx: 'auto' }}>
+            We're redefining fashion with quality, style, and affordability
+          </Typography>
+        </Container>
+      </Box>
+
+      <Container maxWidth="lg" sx={{ py: 8 }}>
+        <Grid container spacing={6} alignItems="center">
+          {/* Image Section */}
+          <Grid item xs={12} md={6}>
+            <Paper elevation={8} sx={{ borderRadius: 3, overflow: 'hidden' }}>
+              <CardMedia
+                component="img"
+                alt="Clothing Store"
+                height="500"
+                image="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.1&auto=format&fit=crop&w=1770&q=80"
+                title="About Us"
+              />
+            </Paper>
+          </Grid>
+
+          {/* Text Section */}
+          <Grid item xs={12} md={6}>
+            <Box>
+              <Typography variant="h3" component="h2" gutterBottom fontWeight="bold" color="primary">
+                Our Story
+              </Typography>
+
+              <Typography variant="body1" paragraph sx={{ fontSize: '1.1rem', lineHeight: 1.7 }}>
+                Welcome to Lelo, where we are committed to providing the best
+                products and services in the industry. Our journey began with a simple
+                idea: to bring the latest trends in clothing directly to your wardrobe.
+              </Typography>
+              <Typography variant="body1" paragraph sx={{ fontSize: '1.1rem', lineHeight: 1.7 }}>
+                We pride ourselves on offering high-quality, stylish, and affordable
+                clothing for everyone. Our team works tirelessly to source the best
+                materials and designs from around the world.
+              </Typography>
+              <Typography variant="body1" paragraph sx={{ fontSize: '1.1rem', lineHeight: 1.7 }}>
+                At Lelo, we believe in innovation, integrity, and the importance of
+                building strong relationships with our clients. These core values guide
+                us in every project we undertake.
+              </Typography>
+              <Button
+                variant="contained"
+                color="primary"
+                size="large"
+                href="/products"
+                sx={{ mt: 3, px: 4, py: 1.5 }}
+              >
+                Shop Our Collection
+              </Button>
+            </Box>
+          </Grid>
         </Grid>
 
-        {/* Text Section */}
-        <Grid item xs={12} md={6}>
-          <Box>
-            <Typography variant="h3" component="h1" gutterBottom>
-              About Us
-            </Typography>
-
-            <Typography variant="body1" paragraph>
-              Welcome to Lelo, where we are committed to providing the best
-              products and services in the industry. Our journey began in one
-              Year, and since then, we have dedicated ourselves to meeting the
-              needs of our customers with the highest standards of quality and
-              customer service.
-            </Typography>
-            <Typography variant="body2" paragraph>
-              Our team consists of passionate professionals who are experts in
-              their respective fields. We believe in innovation, integrity, and
-              the importance of building strong relationships with our clients.
-              These core values guide us in every project we undertake.
-            </Typography>
-            <Typography variant="body3" paragraph>
-              At Lelo, we strive to create a positive impact not only for our
-              customers but also for our community and the environment. We are
-              constantly exploring new ways to improve our processes and
-              products, ensuring that we stay ahead of the curve in an
-              ever-changing marketplace.
-            </Typography>
-            <Typography variant="body4" paragraph>
-              Thank you for choosing Lelo. We look forward to continuing to
-              serve you with excellence and dedication.
-            </Typography>
-            <Typography variant="body5" paragraph>
-              Welcome to [Your Store Name], where fashion meets quality. Our
-              journey began with a simple idea: to bring the latest trends in
-              clothing directly to your wardrobe. We pride ourselves on offering
-              high-quality, stylish, and affordable clothing for everyone. Our
-              team works tirelessly to source the best materials and designs
-              from around the world.
-            </Typography>
-            <Typography variant="body6" paragraph>
-              Whether you are looking for the perfect outfit for a special
-              occasion or everyday essentials, we have something for everyone.
-              Our commitment to customer satisfaction is unmatched, and we
-              strive to provide a seamless shopping experience from start to
-              finish.
-            </Typography>
-            <Button
-              variant="contained"
-              color="primary"
-              size="large"
-              href="/products">
-              Shop Now
-            </Button>
-          </Box>
-        </Grid>
-      </Grid>
-    </Container>
+        {/* Team Section */}
+        <Box sx={{ mt: 10 }}>
+          <Typography variant="h3" component="h2" textAlign="center" fontWeight="bold" gutterBottom color="primary">
+            Our Values
+          </Typography>
+          <Grid container spacing={4} sx={{ mt: 2 }}>
+            <Grid item xs={12} md={4}>
+              <Paper elevation={2} sx={{ p: 4, textAlign: 'center', height: '100%', borderRadius: 3 }}>
+                <Box sx={{ fontSize: '3rem', mb: 2 }}>⭐</Box>
+                <Typography variant="h5" gutterBottom fontWeight="bold">Quality</Typography>
+                <Typography>
+                  We never compromise on quality. Every product is carefully selected and tested.
+                </Typography>
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Paper elevation={2} sx={{ p: 4, textAlign: 'center', height: '100%', borderRadius: 3 }}>
+                <Box sx={{ fontSize: '3rem', mb: 2 }}>❤️</Box>
+                <Typography variant="h5" gutterBottom fontWeight="bold">Customer First</Typography>
+                <Typography>
+                  Our customers are at the heart of everything we do. Your satisfaction is our priority.
+                </Typography>
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Paper elevation={2} sx={{ p: 4, textAlign: 'center', height: '100%', borderRadius: 3 }}>
+                <Box sx={{ fontSize: '3rem', mb: 2 }}>🌱</Box>
+                <Typography variant="h5" gutterBottom fontWeight="bold">Sustainability</Typography>
+                <Typography>
+                  We're committed to sustainable practices and reducing our environmental impact.
+                </Typography>
+              </Paper>
+            </Grid>
+          </Grid>
+        </Box>
+      </Container>
+    </Box>
   );
 }
 

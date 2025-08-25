@@ -1,16 +1,22 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
-import CardActions from "@mui/material/CardActions";
-import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
+import {
+  Card,
+  CardMedia,
+  CardContent,
+  Typography,
+  CardActions,
+  Button,
+  Box,
+  Rating,
+  IconButton
+} from "@mui/material";
+import { Favorite, FavoriteBorder } from "@mui/icons-material";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const Cards = ({ image, title, price, items }) => {
+const Cards = ({ image, title, price, items, rating }) => {
   const navigate = useNavigate();
+  const [isFavorite, setIsFavorite] = React.useState(false);
 
   const singleUser = (items) => {
     if (items && items.id) {
@@ -20,68 +26,101 @@ const Cards = ({ image, title, price, items }) => {
     }
   };
 
+  const toggleFavorite = (e) => {
+    e.stopPropagation();
+    setIsFavorite(!isFavorite);
+  };
+
   return (
-    <Box display="flex" justifyContent="center" alignItems="center" p={2}>
+    <Box display="flex" justifyContent="center" alignItems="center">
       <Card
         sx={{
+          width: '100%',
           maxWidth: 345,
-          borderRadius: "10px",
+          borderRadius: 3,
           boxShadow: 3,
-          transition: "all 0.3s ease-in-out",
-          "&:hover": {
+          transition: 'all 0.3s ease-in-out',
+          '&:hover': {
             boxShadow: 6,
-            transform: "scale(1.05)",
+            transform: 'translateY(-8px)',
           },
-          display: "flex",
-          flexDirection: "column",
-        }}>
+          display: 'flex',
+          flexDirection: 'column',
+          position: 'relative'
+        }}
+      >
+        <IconButton
+          sx={{
+            position: 'absolute',
+            top: 8,
+            right: 8,
+            zIndex: 1,
+            backgroundColor: 'rgba(255,255,255,0.8)',
+            '&:hover': {
+              backgroundColor: 'rgba(255,255,255,0.9)',
+            }
+          }}
+          onClick={toggleFavorite}
+        >
+          {isFavorite ? (
+            <Favorite color="error" />
+          ) : (
+            <FavoriteBorder />
+          )}
+        </IconButton>
+
         <CardMedia
           component="img"
-          height="140" // Reduced height for a smaller image
+          height="240"
           image={image}
-          alt="Product"
+          alt={title}
           sx={{
-            objectFit: "contain", // Adjusts the image to fit inside without cropping
-            borderTopLeftRadius: "10px",
-            borderTopRightRadius: "10px",
+            objectFit: "contain",
+            p: 2,
+            pt: 3
           }}
         />
-        <CardContent
-          sx={{
-            backgroundColor: "#333",
-            color: "#fff",
-            display: "flex",
-            flexDirection: "column",
-            flexGrow: 1, // Makes sure the content fills the remaining space
-            justifyContent: "space-between", // Ensures proper spacing
-          }}>
-          <Typography gutterBottom variant="h6" component="div">
+        <CardContent sx={{ flexGrow: 1 }}>
+          <Typography 
+            gutterBottom 
+            variant="h6" 
+            component="div" 
+            sx={{
+              display: '-webkit-box',
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: 'vertical',
+              overflow: 'hidden',
+              minHeight: '64px'
+            }}
+          >
             {title}
           </Typography>
-          <Typography variant="h6" component="div" sx={{ mt: 1 }}>
-            Price: ${price}
+          
+          {rating && (
+            <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+              <Rating value={rating.rate} precision={0.1} size="small" readOnly />
+              <Typography variant="body2" color="text.secondary" sx={{ ml: 1 }}>
+                ({rating.count})
+              </Typography>
+            </Box>
+          )}
+          
+          <Typography variant="h5" color="primary" fontWeight="bold">
+            ${price}
           </Typography>
         </CardContent>
-        <CardActions
-          sx={{
-            backgroundColor: "#444",
-            borderBottomLeftRadius: "10px",
-            borderBottomRightRadius: "10px",
-            display: "flex",
-            justifyContent: "center", // Centers the button
-            padding: 1, // Adds padding around the button
-          }}>
+        <CardActions sx={{ p: 2, pt: 0 }}>
           <Button
             variant="contained"
             color="primary"
+            fullWidth
             onClick={() => singleUser(items)}
             sx={{
-              background: "linear-gradient(to right, black, blue)", // Gradient button
-              "&:hover": {
-                background: "linear-gradient(to right, blue, black)",
-              },
-            }}>
-            See Details
+              py: 1,
+              background: 'linear-gradient(45deg, #3f51b5 30%, #2196f3 90%)',
+            }}
+          >
+            View Details
           </Button>
         </CardActions>
       </Card>
