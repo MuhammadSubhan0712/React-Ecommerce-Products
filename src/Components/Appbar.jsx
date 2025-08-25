@@ -101,8 +101,8 @@ function ResponsiveAppBar() {
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
+              fontFamily: "Georgia",
+              fontWeight: 800,
               letterSpacing: ".2rem",
               color: "inherit",
               textDecoration: "none",
@@ -157,7 +157,7 @@ function ResponsiveAppBar() {
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: "monospace",
+              fontFamily: "Georgia",
               fontWeight: 700,
               letterSpacing: ".2rem",
               color: "inherit",
@@ -194,7 +194,7 @@ function ResponsiveAppBar() {
               color="inherit"
               onClick={() => navigate("/singleproduct/:id")}
               sx={{ mr: 1 }}>
-                <ShoppingCart />
+              <ShoppingCart />
             </IconButton>
 
             <Tooltip title="Open settings">
