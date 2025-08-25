@@ -9,6 +9,7 @@ import Contact from "./Pages/Contact";
 import Product from "./Pages/Products";
 import SingleProduct from "./Pages/SingleProduct";
 
+
 // Create a custom theme
 const theme = createTheme({
   palette: {
