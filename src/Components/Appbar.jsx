@@ -12,7 +12,6 @@ import {
   Button,
   Tooltip,
   MenuItem,
-  Badge,
   alpha,
   InputBase,
   styled,
@@ -193,11 +192,9 @@ function ResponsiveAppBar() {
             <IconButton
               size="large"
               color="inherit"
-              onClick={() => navigate("/cart")}
+              onClick={() => navigate("/singleproduct/:id")}
               sx={{ mr: 1 }}>
-              <Badge badgeContent={4} color="secondary">
                 <ShoppingCart />
-              </Badge>
             </IconButton>
 
             <Tooltip title="Open settings">
