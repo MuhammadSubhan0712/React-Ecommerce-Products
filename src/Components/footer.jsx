@@ -10,6 +10,7 @@ import {
 import { Facebook, Twitter, Instagram, LinkedIn } from "@mui/icons-material";
 
 const Footer = () => {
+
   return (
     <Box
       component="footer"
@@ -19,6 +20,7 @@ const Footer = () => {
         py: 6,
         mt: "auto",
       }}>
+
       <Container maxWidth="lg">
         <Grid container spacing={4}>
           <Grid item xs={12} sm={6} md={3}>
@@ -45,6 +47,7 @@ const Footer = () => {
             </Box>
           </Grid>
 
+
           <Grid item xs={12} sm={6} md={3}>
             <Typography variant="h6" gutterBottom fontWeight="bold">
               Shop
@@ -62,6 +65,7 @@ const Footer = () => {
               <Typography variant="body2">New Arrivals</Typography>
             </Link>
           </Grid>
+
 
           <Grid item xs={12} sm={6} md={3}>
             <Typography variant="h6" gutterBottom fontWeight="bold">
